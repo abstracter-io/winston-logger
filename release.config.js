@@ -7,8 +7,6 @@ module.exports = {
     "@semantic-release/changelog",
     "@semantic-release/npm",
 
-    // TODO: Pushing generated release assets is failing
-    // When the branch is protected
     // https://github.com/semantic-release/git
     [
       "@semantic-release/git",
