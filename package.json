@@ -1,0 +1,78 @@
+{
+  "name": "@abstracter/winston-logger",
+  "version": "1.0.0",
+  "description": "A pre-configured logger powered by winston",
+  "main": "dist/logger.js",
+  "types": "dist/logger.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abstracter-io/winston-logger"
+  },
+  "scripts": {
+    "outdated": "npx npm-check -u",
+    "lint": "eslint --format pretty --ext=.js,.ts --fix .",
+    "lint:check": "eslint --print-config src/logger.ts | eslint-config-prettier-check",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "tsc",
+    "clean": "rimraf dist coverage",
+    "clean:build": "npm run clean && npm run build",
+    "release": "cross-env HUSKY_SKIP_HOOKS=1 semantic-release"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">= 12.18.0"
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "keywords": [
+    "logger",
+    "winston"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@types/faker": "^4.1.12",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^12.12.47",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "commitizen": "^4.1.2",
+    "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "faker": "^4.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.10",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.1.1",
+    "standard": "^14.3.4",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5",
+    "winston": "^3.3.3"
+  },
+  "dependencies": {
+    "node-request-context": "^1.0.5"
+  }
+}
