@@ -3,6 +3,13 @@
 
 ### Features
 
+* initial release ([1a196e4](https://github.com/abstracter-io/winston-logger/commit/1a196e44a4588e4f66db1a1ddbd46cf987c150ce))
+
+# 1.0.0 (2020-07-23)
+
+
+### Features
+
 * added new feature ([2e8fef4](https://github.com/abstracter-io/winston-logger/commit/2e8fef4e1615fa12235b3b79658d0f7bf644406b))
 * initial commit ([946b1be](https://github.com/abstracter-io/winston-logger/commit/946b1bec3fe6170fc1184b3374b3daa504ca2af9))
 * new ([b8f3509](https://github.com/abstracter-io/winston-logger/commit/b8f350936cdf283f682fd5b3d7ef88c0c1926c3a))

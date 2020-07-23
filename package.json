@@ -1,6 +1,6 @@
 {
   "name": "@abstracter/winston-logger",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A pre-configured logger powered by winston",
   "main": "dist/logger.js",
   "types": "dist/logger.d.ts",
