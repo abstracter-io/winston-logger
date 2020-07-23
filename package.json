@@ -31,7 +31,8 @@
   ],
   "keywords": [
     "logger",
-    "winston"
+    "winston",
+    "context"
   ],
   "license": "MIT",
   "peerDependencies": {
