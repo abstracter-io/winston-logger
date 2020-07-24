@@ -16,6 +16,8 @@ env:
 
 jobs:
   lint:
+    if: ${{ github.event.action != 'closed' }}
+
     runs-on: ubuntu-latest
 
     env:
