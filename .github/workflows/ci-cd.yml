@@ -13,7 +13,7 @@ env:
 
 jobs:
   ci-cd:
-    name: ${{ github.ref == 'refs/heads/master' && 'ci/cd' || 'ci' }}
+    name: CI-CD
 
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
 
