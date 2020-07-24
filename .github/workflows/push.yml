@@ -8,7 +8,6 @@ on:
   push:
 
 env:
-  release: ${{ github.ref == 'refs/heads/master' }}
   CI: true
 
 jobs:
