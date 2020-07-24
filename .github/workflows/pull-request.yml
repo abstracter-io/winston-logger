@@ -20,7 +20,7 @@ jobs:
 
     env:
       npm_config_cache: $HOME/.npm
-      npm_cache_key: ${{ runner.os }}-build-node-modules-cache
+      npm_cache_key: build-node-modules-cache
 
     steps:
       # https://github.com/actions/checkout

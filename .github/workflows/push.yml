@@ -12,7 +12,7 @@ env:
 
 jobs:
   ci-cd:
-    name: CI-CD
+    name: ci-cd
 
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
 
