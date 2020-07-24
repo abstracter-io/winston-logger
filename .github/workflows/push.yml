@@ -1,13 +1,13 @@
-# ${{ github.event.before }} ${{ github.sha }}
-# https://github.com/conventional-changelog/commitlint/issues/586#issuecomment-657226800
-# https://github.com/wagoid/commitlint-github-action 🤦
+# https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions
+# https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables
 
-name: Workflow
+name: Push Workflow
 
 on:
   push:
 
 env:
+  # This set implicitly by GitHub, but I rather be explicit about it.
   CI: true
 
 jobs:
@@ -17,6 +17,10 @@ jobs:
     if: ${{ !contains(github.event.head_commit.message, '[skip-ci]') }}
 
     runs-on: ubuntu-latest
+
+    env:
+      npm_config_cache: $HOME/.npm
+      npm_cache_key: ${{ runner.os }}-build-node-modules-cache
 
     steps:
       # https://github.com/actions/checkout
@@ -36,22 +40,13 @@ jobs:
         with:
           node-version: ${{ steps.nvm.outputs.version }}
 
-      - name: Determine npm cache location
-        id: npm-cache-dir
-        run: echo "##[set-output name=path;]$(npm config get cache)"
-
       # https://github.com/actions/cache
       - name: Cache node modules
         uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
         with:
-          path: ${{ steps.npm-cache-dir.outputs.path }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          path: ${{ env.npm_config_cache }}
+          key: ${{ env.npm_cache_key }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ env.npm_cache_key }}-
 
       - name: install
         run: npm ci
