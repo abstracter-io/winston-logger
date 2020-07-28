@@ -2,7 +2,14 @@
 // https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#configuration
 module.exports = {
   plugins: [
-    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        // https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-conventionalcommits
+        preset: "conventionalcommits",
+        presetConfig: {},
+      },
+    ],
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/npm",
