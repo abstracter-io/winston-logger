@@ -11,7 +11,7 @@ on:
     types: [ opened, edited, synchronize, ready_for_review ]
 
 env:
-  # This set implicitly by GitHub, but I rather be explicit about it.
+  # This is set implicitly by GitHub, but I rather be explicit about it.
   CI: true
 
 jobs:
